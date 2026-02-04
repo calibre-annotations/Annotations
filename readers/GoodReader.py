@@ -298,13 +298,13 @@ class GoodReaderApp(ExportingReader):
         # This search spec is tuned to a line like this:
         # Highlight (yellow), Jan 25, 2013, 5:17 AM:
         self._log("could not parse line:\n%s" % line)
-        search_spec = ('%s \((?P<color>.+?)\),\s*(?P<timestamp>.+):' % ann_type)
+        search_spec = (r'%s \((?P<color>.+?)\),\s*(?P<timestamp>.+):' % ann_type)
 
         timestamp_search_spec = (
-                        '(?P<month>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ' +
-                        '(?P<day>\d+), (?P<year>\d{4}).+?' +
-                        '(?P<hour>\d{1,2}):(?P<minutes>\d{2}) ' +
-                        '(?P<am_pm>AM|PM).*'
+                        r'(?P<month>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) ' +
+                        r'(?P<day>\d+), (?P<year>\d{4}).+?' +
+                        r'(?P<hour>\d{1,2}):(?P<minutes>\d{2}) ' +
+                        r'(?P<am_pm>AM|PM).*'
                         )
 
         ts = re.search(search_spec, line)
