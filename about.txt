@@ -1,4 +1,11 @@
 Version history:
+1.17.16 - 20 Mar 2026
+• Fix: Temp Fix for the error "No module named 'ParseKindleMyClippingsTxt'" on a Kindle Paperwhite and Calibre 9.4 (done with Gemini Code Assist based on the previous version 1.17.15)
+
+1.17.15 - 02 Mar 2026
+	See https://www.mobileread.com/forums/showpost.php?p=4565070&postcount=1279
+....
+
 1.17.13 - 19 July 2022
 • Fix: Qt6 compatibility - Yet another enum issue.
 

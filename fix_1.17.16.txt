@@ -1,0 +1,62 @@
+### Summary of Changes to Fix `ModuleNotFoundError` in Annotations Plugin
+
+The error `ModuleNotFoundError: No module named 'ParseKindleMyClippingsTxt'` occurs because of the order and manner in which the plugin loads its internal files (modules). The fix involves making two small edits to the `action.py` file within the plugin to ensure that modules are loaded in the correct order and are properly shared.
+
+Here are the exact changes that were made:
+
+**1. Enabled Module Caching in `action.py`**
+
+To ensure that a loaded module is available to other modules that need it, caching was enabled.
+
+*   **File:** `action.py`
+*   **Function:** `load_source`
+*   **Change:** The line `sys.modules[module.__name__] = module` was uncommented.
+
+**Before:**
+```python
+# The module is always executed and not cached in sys.modules.
+# Uncomment the following line to cache the module.
+# sys.modules[module.__name__] = module
+```
+**After:**
+```python
+# The module is always executed and not cached in sys.modules.
+# Uncomment the following line to cache the module.
+sys.modules[module.__name__] = module
+```
+
+**2. Prioritized Module Loading in `action.py`**
+
+To fix the import error, the code was instructed to load the required `ParseKindleMyClippingsTxt.py` module *before* any other modules that depend on it.
+
+*   **File:** `action.py`
+*   **Function:** `load_dynamic_reader_classes`
+*   **Change:** Logic was added to find `ParseKindleMyClippingsTxt.py` in the list of files to be loaded and move it to the beginning.
+
+**Before:**
+```python
+# Load the builtin classes
+folder = 'readers/'
+reader_app_classes = get_resource_files(self.plugin_path, folder=folder)
+sample_classes = ['SampleExportingApp', 'SampleFetchingApp']
+```
+**After:**
+```python
+# Load the builtin classes
+folder = 'readers/'
+reader_app_classes = get_resource_files(self.plugin_path, folder=folder)
+
+# Ensure ParseKindleMyClippingsTxt is loaded first to satisfy dependencies
+parser_module = 'readers/ParseKindleMyClippingsTxt.py'
+if parser_module in reader_app_classes:
+    reader_app_classes.remove(parser_module)
+    reader_app_classes.insert(0, parser_module)
+
+sample_classes = ['SampleExportingApp', 'SampleFetchingApp']
+```
+
+**3. ZIP and load into Calibre**
+
+Once the changes are done archive the entire folder into ZIP file - e.g. Annotations_1.17.16.zip
+The load the archive into Calibre using Preferences=> Advanced => Plugins => Load plugin from file
+
