@@ -157,11 +157,11 @@ class ReaderApp(object):
 
     @staticmethod
     def generate_annotations_db_name(reader_app, device_name):
-        return ReaderApp.ANNOTATIONS_DB_TEMPLATE.format(re.sub('\W', '_', reader_app), re.sub('\W', '_', device_name))
+        return ReaderApp.ANNOTATIONS_DB_TEMPLATE.format(re.sub(r'\\W', '_', reader_app), re.sub(r'\\W', '_', device_name))
 
     @staticmethod
     def generate_books_db_name(reader_app, device_name):
-        return ReaderApp.BOOKS_DB_TEMPLATE.format(re.sub('\W', '_', reader_app), re.sub('\W', '_', device_name))
+        return ReaderApp.BOOKS_DB_TEMPLATE.format(re.sub(r'\W', '_', reader_app), re.sub(r'\W', '_', device_name))
 
     def get_books(self, books_db):
         return self.opts.db.get_books(books_db)

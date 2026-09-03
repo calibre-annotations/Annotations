@@ -199,7 +199,7 @@ class KoboFetchingApp(USBReader):
             if hasattr(mi, 'title_sort'):
                 book_mi.title_sort = mi.title_sort
             else:
-                book_mi.title_sort = re.sub('^\s*A\s+|^\s*The\s+|^\s*An\s+', '', mi.title).rstrip()
+                book_mi.title_sort = re.sub(r'^\s*A\s+|^\s*The\s+|^\s*An\s+', '', mi.title).rstrip()
 
             if hasattr(mi, 'uuid'):
                 book_mi.uuid = mi.uuid

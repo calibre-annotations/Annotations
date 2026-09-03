@@ -8,7 +8,7 @@ __license__ = 'GPL v3'
 __copyright__ = '2013, Greg Riker <griker@hotmail.com>, 2014-2020 additions by David Forrester <davidfor@internode.on.net>'
 __docformat__ = 'restructuredtext en'
 
-import imp, inspect, os, re, sys, tempfile, threading, types
+import inspect, os, re, sys, tempfile, threading, types
 
 # calibre Python 3 compatibility.
 try:
@@ -85,6 +85,19 @@ try:
 except NameError:
     debug_print("Annotations::action.py - exception when loading translations")
     pass # load_translations() added in calibre 1.9
+
+import importlib.util
+import importlib.machinery
+
+def load_source(modname, filename):
+    loader = importlib.machinery.SourceFileLoader(modname, filename)
+    spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
+    module = importlib.util.module_from_spec(spec)
+    # The module is always executed and not cached in sys.modules.
+    # Uncomment the following line to cache the module.
+    # sys.modules[module.__name__] = module
+    loader.exec_module(module)
+    return module
 
 class AnnotationsAction(InterfaceAction, Logger):
 
@@ -900,7 +913,7 @@ class AnnotationsAction(InterfaceAction, Logger):
             with open(tmp_file, 'wb') as tf:
                 tf.write(get_resources(rac))
             self._log(" loading built-in class '%s'" % name)
-            imp.load_source(name, tmp_file)
+            load_source(name, tmp_file)
             os.remove(tmp_file)
 
         # Load locally defined classes specified in config file
@@ -916,7 +929,7 @@ class AnnotationsAction(InterfaceAction, Logger):
                     name = re.sub('_', '', name)
                     self._log(" loading external class '%s'" % name)
                     try:
-                        imp.load_source(name, ac)
+                        load_source(name, ac)
                     except:
                         # If additional_class fails to import, exit
                         import traceback
