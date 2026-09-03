@@ -95,7 +95,7 @@ def load_source(modname, filename):
     module = importlib.util.module_from_spec(spec)
     # The module is always executed and not cached in sys.modules.
     # Uncomment the following line to cache the module.
-    # sys.modules[module.__name__] = module
+    sys.modules[module.__name__] = module
     loader.exec_module(module)
     return module
 
@@ -901,6 +901,13 @@ class AnnotationsAction(InterfaceAction, Logger):
         # Load the builtin classes
         folder = 'readers/'
         reader_app_classes = get_resource_files(self.plugin_path, folder=folder)
+
+        # Ensure ParseKindleMyClippingsTxt is loaded first to satisfy dependencies
+        parser_module = 'readers/ParseKindleMyClippingsTxt.py'
+        if parser_module in reader_app_classes:
+            reader_app_classes.remove(parser_module)
+            reader_app_classes.insert(0, parser_module)
+
         sample_classes = ['SampleExportingApp', 'SampleFetchingApp']
         for rac in reader_app_classes:
             basename = re.sub(folder, '', rac)
