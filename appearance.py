@@ -299,7 +299,7 @@ class AnnotationElementsTable(QTableWidget):
         css = unicode(widget.toPlainText())
         lines = []
         for line in css.split('\n'):
-            lines.append(re.sub('^\s*', '', line))
+            lines.append(re.sub(r'^\s*', '', line))
         self.resize_row_height(lines, row)
 #         self.prefs.set('appearance_css', self.get_data())
         widget.setFocus()
@@ -424,7 +424,7 @@ class AnnotationElementsTable(QTableWidget):
 
         lines = []
         for line in css.split('\n'):
-            lines.append(re.sub('^\s*', '', line))
+            lines.append(re.sub(r'^\s*', '', line))
         css_content = QPlainTextEdit('\n'.join(lines))
         css_content.setFont(self.FONT)
         css_content.textChanged.connect(partial(self.css_edited, row))
