@@ -375,7 +375,8 @@ class KoboFetchingApp(USBReader):
 
         from contextlib import closing
         import apsw
-        with closing(apsw.Connection(self.device.device_database_path())) as connection:
+        #with closing(apsw.Connection(self.device.device_database_path())) as connection:
+        with closing(apsw.Connection(self.device.device_database_path)) as connection:
             self.opts.pb.set_label(_("Fetch annotations from database"))
             connection.setrowtrace(self.row_factory)
     
