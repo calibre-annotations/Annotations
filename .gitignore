@@ -1,5 +1,5 @@
 .DS_Store
 _dev
 _garage
-# .claude/
-# CLAUDE.md
+.claude/
+CLAUDE.md
