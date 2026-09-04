@@ -1,7 +1,10 @@
+.DS_Store
+_dev/
+_garage/
 .git/*
 .github/*
 .gitignore
 .distignore
 annotated_books - Copy.py
-BuildLanguageFiles.cmd
-run.cmd
+tools/
+CLAUDE.md
