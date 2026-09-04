@@ -1,9 +1,16 @@
-<!--This document is formatted in GitHub flavored markdown, tweaked for Github's
-    presentation of the repo's README.md file. Documentation for GFM is at
-    https://help.github.com/articles/github-flavored-markdown
-    A semi-useful site for previewing GFM is available at
-    http://tmpvar.com/markdown.html
--->
+# Annotations
+
+A [Calibre](https://calibre-ebook.com/) plugin for fetching and importing annotations from ebook reader devices into [Calibre](https://calibre-ebook.com/) "Custom Columns."
+
+## Note about plugin history
+This plugin's codebase has been handed across several maintainers over the years.
+
+**As of September 2026**, we hope to make [this github repository](https://github.com/calibre-annotations/Annotations) a stable home for ongoing collaborative enhancements, maintenance updates and [releases](https://github.com/calibre-annotations/Annotations/releases).
+
+[Issues](https://github.com/calibre-annotations/Annotations/issues) and [Pull Requests](https://github.com/calibre-annotations/Annotations/pulls) welcome, as well as [Discussions](https://github.com/calibre-annotations/Annotations/discussions) of technical matters.
+
+---
+
 ## Support
 
 Support for this plugin is in the [MobileRead  Forums](https://www.mobileread.com/forums/index.php). There is a thread dedicated to the plugin, https://www.mobileread.com/forums/showthread.php?t=241206. Please post any problems and requests there.
