@@ -1,5 +1,10 @@
 Version history:
 
+1.17.17 - 4 September 2026
+• Cleanup: old files, update some documentation, expand version history
+• Troubleshoot releasing process (test and compare CI plugin file and "Test" version)
+• Re-enabled the translations mechanism.
+
 1.17.16b - 4 September 2026
 • Consolidation: all hotfixes since last official release rolled up with "master" branch of original repo.
 
