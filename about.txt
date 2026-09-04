@@ -1,4 +1,8 @@
 Version history:
+
+1.17.16b - 4 September 2026
+• Consolidation: all hotfixes since last official release rolled up with "master" branch of original repo.
+
 1.17.16 - 20 Mar 2026
 • Fix: Temp Fix for the error "No module named 'ParseKindleMyClippingsTxt'" on a Kindle Paperwhite and Calibre 9.4 (done with Gemini Code Assist based on the previous version 1.17.15)
 
