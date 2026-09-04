@@ -300,7 +300,7 @@ msgid "Confidence"
 msgstr "Confiance"
 
 #: annotated_books.py:373 annotated_books.py:499 annotated_books.py:510
-msgid "Clear All"
+msgid "Deselect all"
 msgstr "Tout effacer"
 
 #: annotated_books.py:376 annotated_books.py:523
@@ -316,7 +316,7 @@ msgid "Preview"
 msgstr "Aperçu"
 
 #: annotated_books.py:504
-msgid "Set All"
+msgid "Select all"
 msgstr "Tout définir"
 
 #: annotated_books.py:540

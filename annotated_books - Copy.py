@@ -348,7 +348,7 @@ class AnnotatedBooksDialog(SizePersistedDialog):
         self.import_button.setText(_('Import Annotations'))
 
         # Action buttons
-        self.toggle_checkmarks_button = self.dialogButtonBox.addButton(_('Clear All'), QDialogButtonBox.ActionRole)
+        self.toggle_checkmarks_button = self.dialogButtonBox.addButton(_('Deselect all'), QDialogButtonBox.ActionRole)
         self.toggle_checkmarks_button.setObjectName('toggle_checkmarks_button')
 
         scb_text = _('Show match status')
@@ -474,18 +474,18 @@ class AnnotatedBooksDialog(SizePersistedDialog):
     def toggle_checkmarks(self):
         button_text = str(self.toggle_checkmarks_button.text())
         debug_print("toggle_checkmarks - %s" % button_text)
-        if button_text == _('Clear All'):
-            debug_print("toggle_checkmarks - Clear All")
+        if button_text == _('Deselect all'):
+            debug_print("toggle_checkmarks - Deselect all")
             for i in range(len(self.tabledata)):
-                debug_print("toggle_checkmarks - Clear All - row - %d" % i)
+                debug_print("toggle_checkmarks - Deselect all - row - %d" % i)
                 self.tm.arraydata[i][self.ENABLED_COL].setCheckState(qCheckState_Unchecked)
-            self.toggle_checkmarks_button.setText(_('Set All'))
+            self.toggle_checkmarks_button.setText(_('Select all'))
         else:
-            debug_print("toggle_checkmarks - Set all")
+            debug_print("toggle_checkmarks - Select all")
             for i in range(len(self.tabledata)):
-                debug_print("toggle_checkmarks - Set All - row - %d" % i)
+                debug_print("toggle_checkmarks - Select all - row - %d" % i)
                 self.tm.arraydata[i][self.ENABLED_COL].setCheckState(qCheckState_Checked)
-            self.toggle_checkmarks_button.setText(_('Clear All'))
+            self.toggle_checkmarks_button.setText(_('Deselect all'))
         self.tm.refresh(self.show_confidence_colors)
 
     def toggle_confidence_colors(self):
