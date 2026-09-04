@@ -7,4 +7,5 @@ _garage/
 .distignore
 annotated_books - Copy.py
 tools/
+.claude/
 CLAUDE.md
