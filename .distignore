@@ -1,11 +1,12 @@
 .DS_Store
-_dev/
-_garage/
+_dev/*
+_garage/*
 .git/*
 .github/*
 .gitignore
 .distignore
 annotated_books - Copy.py
-tools/
-.claude/
+tools/*
+.claude/*
 CLAUDE.md
+readers/_*

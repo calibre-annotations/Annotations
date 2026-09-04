@@ -7,7 +7,7 @@ ZIP_PATH="$SCRIPT_DIR/../_garage/Annotations-test.zip"
 
 cd "$SCRIPT_DIR/.."
 
-EXCLUDES=("readers/_*")
+EXCLUDES=()
 while IFS= read -r pattern || [ -n "$pattern" ]; do
     [ -z "$pattern" ] && continue
     case "$pattern" in
