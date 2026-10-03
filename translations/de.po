@@ -9,13 +9,14 @@ msgstr ""
 "Project-Id-Version: Annotations Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 14:28+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-09-05 08:05+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
 
 #: action.py:109
 msgid ""
@@ -185,9 +186,10 @@ msgid "About"
 msgstr "Über"
 
 #: action.py:1258
-#, fuzzy
 msgid "Fetch annotations from a supported device when it is connected"
-msgstr "Lade Anmerkungen vom USB-Gerät"
+msgstr ""
+"Anmerkungen von einem unterstützten Gerät abrufen, sobald dieses "
+"angeschlossen ist"
 
 #: action.py:1266
 msgid "Fetch annotations from…"
@@ -203,9 +205,8 @@ msgid "Fetch annotations from {0}"
 msgstr "Lade Anmerkungen von {0}"
 
 #: action.py:1307
-#, fuzzy
 msgid "Fetch annotations from connected device"
-msgstr "Lade Anmerkungen vom USB-Gerät"
+msgstr "Anmerkungen vom verbundenen Gerät abrufen"
 
 #: action.py:1319
 msgid "Import annotations from…"
@@ -254,6 +255,9 @@ msgid ""
 "www.mobileread.com/forums/showthread.php?p=2853161\">Annotations plugin "
 "thread</a> at MobileRead’s Calibre forum."
 msgstr ""
+"Um mehr über dieses Plugin zu erfahren, besuchen Sie den <a href=\"http://"
+"www.mobileread.com/forums/showthread.php?p=2853161\">Thread zum "
+"„Annotations“-Plugin</a> im Calibre-Forum von MobileRead."
 
 #: action.py:1402
 msgid "Supported iOS reader apps"
@@ -406,6 +410,8 @@ msgstr "Neustart erforderlich"
 msgid ""
 "Title image not found - you must restart Calibre before using this plugin!"
 msgstr ""
+"Titelbild nicht gefunden – Sie müssen Calibre neu starten, bevor Sie dieses "
+"Plugin verwenden können!"
 
 #: common_utils.py:389
 msgid "Import"
@@ -496,7 +502,7 @@ msgstr "Debugausgabe für libiMobileDevice aktivieren"
 
 #: config.py:122
 msgid "Print libiMobileDevice debug messages to console"
-msgstr "libiMobileDevice Debugnachrichten auf der Konsole ausgeben"
+msgstr "Debug-Meldungen von libiMobileDevice auf der Konsole ausgeben"
 
 #: config.py:129
 msgid "Annotation options"
@@ -563,9 +569,8 @@ msgid "Name your '{0}' column:"
 msgstr "Benennen Sie ihre „{0}“ Spalte:"
 
 #: dialogs/cc_wizard.py:56 dialogs/cc_wizard.py:59
-#, fuzzy
 msgid "Custom column wizard"
-msgstr "Individuelle Spalte hinzufügen"
+msgstr "Assistent für benutzerdefinierte Spalten"
 
 #: dialogs/cc_wizard.py:148
 msgid "Already in use"
@@ -588,11 +593,11 @@ msgstr "Spalte umbennnen"
 
 #: dialogs/new_destination.py:44
 msgid "Move annotations or change destination?"
-msgstr ""
+msgstr "Anmerkungen verschieben oder Ziel ändern?"
 
 #: dialogs/new_destination.py:61
 msgid "Move"
-msgstr ""
+msgstr "Verschieben"
 
 #: dialogs/new_destination.py:63
 #, python-brace-format
@@ -689,9 +694,8 @@ msgid "No books selected to fetch annotations from"
 msgstr "Lesen der Anmerkungen von {0} nicht möglich."
 
 #: readers/KoboTouch.py:380 readers/PocketBook.py:345
-#, fuzzy
 msgid "Fetch annotations from database"
-msgstr "Lade Anmerkungen von {0}"
+msgstr "Anmerkungen aus der Datenbank abrufen"
 
 #: readers/KoboTouch.py:489
 msgid "(Unknown Chapter)"
